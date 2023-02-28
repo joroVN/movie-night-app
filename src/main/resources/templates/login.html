@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+<header th:replace="~{fragments/commons::header}"></header>
+<main id=main>
+    <form
+            th:method="post"
+            th:action="@{/users/login}">
+        <label for="username">Username</label>
+        <input id="username"
+               name="username"
+               th:value="${username}"
+               type="text"
+               placeholder="username"/>
+        <label for="password">Password</label>
+        <input id="password"
+               name="password"
+               type="password"
+               placeholder="password"/>
+
+        <p th:if="${bad_credentials}">
+            Invalid username or password.
+        </p>
+
+        <input type="submit" value="Login"/>
+
+    </form>
+</main>
+</body>
+</html>

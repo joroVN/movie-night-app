@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<header id="header">
+    <nav class="nav">
+        <ul class="nav-list" role="list">
+            <li class="item home">
+                <a href="/">Home</a>
+            </li>
+            <li class="item movie">
+                <a th:href="@{/movie-add}">Add Movie</a>
+            </li>
+            <li class="item login" sec:authorize="!isAuthenticated()">
+                <a th:href="@{/users/login}">Login</a>
+            </li>
+            <li class="item register" sec:authorize="!isAuthenticated()">
+                <a th:href="@{/users/register}">Register</a>
+            </li>
+            <li class="item register" sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/users/admins}">Admins</a>
+            </li>
+            <li class="item register" sec:authorize="hasRole('MODERATOR')">
+                <a th:href="@{/users/moderators}">Moderators</a>
+            </li>
+            <li class="item logout" sec:authorize="isAuthenticated()">
+                <a th:href="@{/users/logout}">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

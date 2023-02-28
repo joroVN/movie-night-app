@@ -1,0 +1,36 @@
+@import url("reset.css");
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+#header {
+    height: 5%;
+    background-color: #44495b;
+}
+
+#header .nav .nav-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+#header .nav .nav-list .item a{
+    color: white;
+    text-decoration: none;
+}
+
+
+#main {
+    color: white;
+    height: 95%;
+    background-color: #3b3b3b;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+
