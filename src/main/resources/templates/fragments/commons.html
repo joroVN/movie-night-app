@@ -34,7 +34,12 @@
                 <a th:href="@{/users/moderators}">Moderators</a>
             </li>
             <li class="item logout" sec:authorize="isAuthenticated()">
-                <a th:href="@{/users/logout}">Logout</a>
+                <p>Welcome, <th:block sec:authentication="name"></th:block>!</p>
+                <form
+                        th:method="POST"
+                        th:action="@{/users/logout}">
+                    <input type="submit" value="Logout"/>
+                </form>
             </li>
         </ul>
     </nav>

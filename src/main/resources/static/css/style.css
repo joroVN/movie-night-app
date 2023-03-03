@@ -2,6 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: white;
     width: 100vw;
     height: 100vh;
 }
@@ -22,9 +23,21 @@ body {
     text-decoration: none;
 }
 
+#header .nav .nav-list .item.logout{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+#header .nav .nav-list .item.logout input{
+    background-color: transparent;
+    color: darkgray;
+    border: none;
+}
+
 
 #main {
-    color: white;
     height: 95%;
     background-color: #3b3b3b;
     text-align: center;
